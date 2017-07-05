@@ -2,12 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <title>Tic-Tac-Toe game</title>
 <link rel = "stylesheet" type = "text/css" href = "../css/css1.css" />
 <script>
 function displayRandomImage(ele){
-       var img = ["../image/IMG_20170703_113119.jpg","../image/IMG_20170705_121559.jpg"];
-       var img1 = img[Math.floor(Math.random()*img.length)];
+       var img = {};
+	   img["x"] = "../image/IMG_20170703_113119.jpg";
+	   img["o"] = "../image/IMG_20170705_121559.jpg";
+	   var keys = Object.keys(img);
+	   var keys1 = keys[Math.floor(Math.random()*keys.length)];
+       var img1 = img[keys1];
 if(ele.children[0].getAttribute('src') == ''){
 		ele.children[0].src = img1;
 		
