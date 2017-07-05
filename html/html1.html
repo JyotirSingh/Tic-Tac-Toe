@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Tic-Tac-Toe game</title>
+<link rel = "stylesheet" type = "text/css" href = "../css/css1.css" />
+<script>
+function displayRandomImage(ele){
+       var img = ["../image/IMG_20170703_113119.jpg","../image/IMG_20170705_121559.jpg"];
+       var img1 = img[Math.floor(Math.random()*img.length)];
+if(ele.children[0].getAttribute('src') == ''){
+		ele.children[0].src = img1;
+		
+}else{
+         alert("Already Selected");
+}
+}
+</script>
+</head>
+<body>
+<center>
+<div class = "flex-container">
+<div class = "one" onClick="displayRandomImage(this)">
+<img src = ""/>
+</div>
+<div class = "one" onClick="displayRandomImage(this)">
+<img src = ""/>
+</div>
+
+<div class = "one" onClick="displayRandomImage(this)">
+<img src = ""/>
+</div>
+</div>
+<div class="flex-container1">
+<div class = "one" onClick="displayRandomImage(this)">
+<img src = ""/>
+</div>
+
+<div class = "one" onClick="displayRandomImage(this)">
+<img src = ""/>
+</div>
+
+<div class = "one" onClick="displayRandomImage(this)">
+<img src = ""/>
+</div>
+</div>
+<div class="flex-container2">
+<div class = "one" onClick="displayRandomImage(this)">
+<img src = ""/>
+</div>
+
+<div class = "one" onClick="displayRandomImage(this)">
+<img src = ""/>
+</div>
+
+<div class = "one" onClick="displayRandomImage(this)">
+<img src = ""/>
+</div>
+</div>
+</center>
+</body>
+</html>

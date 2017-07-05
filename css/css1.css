@@ -1,0 +1,40 @@
+/* CSS Document */
+.flex-container {
+  
+    display: flex;
+    width: 300px;
+    height: 71px;
+	padding: 5px;
+	align-items: flex-start;
+	
+}
+.flex-container1 {
+  
+    display: flex;
+    width: 300px;
+    height: 84px;
+	padding: 5px;
+	align-items: center;
+}
+.flex-container2 {
+  
+    display: flex;
+    width: 300px;
+    height: 72px;
+	padding: 5px;
+	align-items: flex-end;
+}
+img {
+max-width: 100%;
+max-height: 100%;
+width: auto;
+}
+.one{
+ border:double;
+ float: left;
+ background-color: #00CCFF;
+ width: 80px;
+ height: 75px;
+ /*padding: 20px; 
+ margin: 50px auto 30px auto;*/
+ } 
