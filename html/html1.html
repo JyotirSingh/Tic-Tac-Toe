@@ -6,89 +6,119 @@
 <title>Tic-Tac-Toe game</title>
 <link rel = "stylesheet" type = "text/css" href = "../css/css1.css" />
 <script>
-var global_key = '';
-var img = {};
-	   img["x"] = "../image/IMG_20170703_113119.jpg";
-	   img["o"] = "../image/IMG_20170705_121559.jpg";
-function displayRandomImage(ele){
-     if(global_key == ''){
+        var global_key = '';
+		var count = 0;
+        var img = {};
+		var t = [];
+	    img["x"] = "../image/IMG_20170703_113119.jpg";
+	    img["o"] = "../image/IMG_20170705_121559.jpg";
+        function displayRandomImage(ele){
+        if(global_key == ''){
 	               var keys = Object.keys(img);
 	               var keys1 = keys[Math.floor(Math.random()*keys.length)];
 	               global_key = keys1;
                    var img1 = img[keys1];
 		           if(ele.children[0].getAttribute('src') == ''){
 				             ele.children[0].src = img1;
+							 count++;
 		           }else
 				     {
 				       alert("Already Selected");
 	                 }
                  }
-      else{
+	   else{
 
          switch(global_key){
           
 		                     case "x":
 	                                   if(ele.children[0].getAttribute('src') == ''){
-		                                     ele.children[0].src = "../image/IMG_20170705_121559.jpg";
+		                                     ele.children[0].src = img["o"];
+											   global_key = "o";
+											   count++;
                                        }else
 				                       {
                                          alert("Already Selected");
                                        }
-                                       global_key = "o";
 	                                   break;
                               case "o":
 		                                if(ele.children[0].getAttribute('src') == ''){
-		                                   ele.children[0].src = "../image/IMG_20170703_113119.jpg"; 
+		                                   ele.children[0].src = img["x"]; 
+										   global_key = "x";
+										   count++;
                                         }else
 				                        {
                                           alert("Already Selected");
                                          }
-                                        global_key = "x";
-	                                    break;
+  	                                    break;
                               }  
             }
-}
-				
+	  
+	  t[0] = document.getElementById("demo").children[0].src; 
+	  t[1] = document.getElementById("demo1").children[0].src;
+	  t[2] = document.getElementById("demo2").children[0].src; 
+	  t[3] = document.getElementById("demo3").children[0].src;
+	  t[4] = document.getElementById("demo4").children[0].src; 
+	  t[5] = document.getElementById("demo5").children[0].src;
+	  t[6] = document.getElementById("demo6").children[0].src;
+	  t[7] = document.getElementById("demo7").children[0].src,
+	  t[8] = document.getElementById("demo8").children[0].src;
+	 
+	 console.log(t);
+	 //debugger;
+	
+	  if(count >= 4 && ((t[0] == t[1] && t[1] == t[2] && t[0] != 'file:///C:/Projects/game/html/html1.html')  ||
+				        (t[0] == t[3] && t[3] == t[6] && t[0] != 'file:///C:/Projects/game/html/html1.html')  ||  
+					    (t[0] == t[4] && t[4] == t[8] && t[0] != 'file:///C:/Projects/game/html/html1.html')  ||
+					    (t[1] == t[4] && t[4] == t[7] && t[1] != 'file:///C:/Projects/game/html/html1.html')  ||  
+					    (t[2] == t[5] && t[5] == t[8] && t[2] != 'file:///C:/Projects/game/html/html1.html')  ||  
+					    (t[2] == t[4] && t[4] == t[6] && t[2] != 'file:///C:/Projects/game/html/html1.html')  ||   
+					    (t[3] == t[4] && t[4] == t[5] && t[3] != 'file:///C:/Projects/game/html/html1.html')  || 
+					    (t[6] == t[7] && t[7] == t[8] && t[6] != 'file:///C:/Projects/game/html/html1.html')))       
+					
+		           	{	
+			            alert("Congrats!! \n You Won");
+	                }        
+}		
 </script>
 </head>
 <body>
 <h1><center>Tic-Tac-Toe Game</center></h1>
 <center>
 <div class = "flex-container">
-<div class = "one" onClick="displayRandomImage(this)">
+<div id="demo" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
 </div>
-<div class = "one" onClick="displayRandomImage(this)">
+<div id="demo1" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
 </div>
 
-<div class = "one" onClick="displayRandomImage(this)">
+<div id="demo2" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
 </div>
 </div>
 <div class="flex-container1">
-<div class = "one" onClick="displayRandomImage(this)">
+<div id="demo3" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
 </div>
 
-<div class = "one" onClick="displayRandomImage(this)">
+<div id="demo4" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
 </div>
 
-<div class = "one" onClick="displayRandomImage(this)">
+<div id="demo5" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
 </div>
 </div>
 <div class="flex-container2">
-<div class = "one" onClick="displayRandomImage(this)">
+<div id="demo6" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
 </div>
 
-<div class = "one" onClick="displayRandomImage(this)">
+<div id="demo7" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
 </div>
 
-<div class = "one" onClick="displayRandomImage(this)">
+<div id="demo8" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
 </div>
 </div>
