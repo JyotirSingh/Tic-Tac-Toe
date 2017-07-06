@@ -6,23 +6,53 @@
 <title>Tic-Tac-Toe game</title>
 <link rel = "stylesheet" type = "text/css" href = "../css/css1.css" />
 <script>
-function displayRandomImage(ele){
-       var img = {};
+var global_key = '';
+var img = {};
 	   img["x"] = "../image/IMG_20170703_113119.jpg";
 	   img["o"] = "../image/IMG_20170705_121559.jpg";
-	   var keys = Object.keys(img);
-	   var keys1 = keys[Math.floor(Math.random()*keys.length)];
-       var img1 = img[keys1];
-if(ele.children[0].getAttribute('src') == ''){
-		ele.children[0].src = img1;
-		
-}else{
-         alert("Already Selected");
+function displayRandomImage(ele){
+     if(global_key == ''){
+	               var keys = Object.keys(img);
+	               var keys1 = keys[Math.floor(Math.random()*keys.length)];
+	               global_key = keys1;
+                   var img1 = img[keys1];
+		           if(ele.children[0].getAttribute('src') == ''){
+				             ele.children[0].src = img1;
+		           }else
+				     {
+				       alert("Already Selected");
+	                 }
+                 }
+      else{
+
+         switch(global_key){
+          
+		                     case "x":
+	                                   if(ele.children[0].getAttribute('src') == ''){
+		                                     ele.children[0].src = "../image/IMG_20170705_121559.jpg";
+                                       }else
+				                       {
+                                         alert("Already Selected");
+                                       }
+                                       global_key = "o";
+	                                   break;
+                              case "o":
+		                                if(ele.children[0].getAttribute('src') == ''){
+		                                   ele.children[0].src = "../image/IMG_20170703_113119.jpg"; 
+                                        }else
+				                        {
+                                          alert("Already Selected");
+                                         }
+                                        global_key = "x";
+	                                    break;
+                              }  
+            }
 }
-}
+				
 </script>
 </head>
 <body>
+<h1><center>Tic-Tac-Toe Game</center></h1>
 <center>
 <div class = "flex-container">
 <div class = "one" onClick="displayRandomImage(this)">
