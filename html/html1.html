@@ -79,13 +79,28 @@
 	  else if(count == 9 )
 	    {
 		    alert("draw!! \n play again");
-		}        
-}		
+		} 
+	}
+	  function myFunction(){
+	        
+			     document.getElementById("demo").children[0].src = '';
+				 document.getElementById("demo1").children[0].src = '';
+				 document.getElementById("demo2").children[0].src = '';
+				 document.getElementById("demo3").children[0].src = '';
+				 document.getElementById("demo4").children[0].src = '';
+				 document.getElementById("demo5").children[0].src = '';
+				 document.getElementById("demo6").children[0].src = '';
+				 document.getElementById("demo7").children[0].src = '';
+				 document.getElementById("demo8").children[0].src = '';
+				 count = 0;
+	          
+          }	
 </script>
 </head>
 <body>
 <h1><center>Tic-Tac-Toe Game</center></h1>
 <center>
+<div id="game">
 <div class = "flex-container">
 <div id="demo" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
@@ -124,6 +139,8 @@
 <img src = ""/>
 </div>
 </div>
+</div>
 </center>
+<center><button id = "reset" onclick="myFunction()"> Restart </button> </center>
 </body>
 </html>
