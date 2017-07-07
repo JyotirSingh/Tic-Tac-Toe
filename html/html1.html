@@ -10,9 +10,10 @@
 		var count = 0;
         var img = {};
 		var t = [];
-	    img["x"] = "../image/IMG_20170703_113119.jpg";
-	    img["o"] = "../image/IMG_20170705_121559.jpg";
-        function displayRandomImage(ele){
+	    img["x"] ="../image/IMG_20170707_154212.jpg";
+	    img["o"] = "../image/IMG_20170707_153859.jpg";
+		//random image display
+        function displayRandomImage(ele){                      
         if(global_key == ''){
 	               var keys = Object.keys(img);
 	               var keys1 = keys[Math.floor(Math.random()*keys.length)];
@@ -27,7 +28,7 @@
 	                 }
                  }
 	   else{
-
+            //turn logic
          switch(global_key){
           
 		                     case "x":
@@ -52,7 +53,7 @@
   	                                    break;
                               }  
             }
-	  
+	        //winner logic
 	  t[0] = document.getElementById("demo").children[0].src; 
 	  t[1] = document.getElementById("demo1").children[0].src;
 	  t[2] = document.getElementById("demo2").children[0].src; 
@@ -74,13 +75,25 @@
 					    (t[6] == t[7] && t[7] == t[8] && t[6] != 'file:///C:/Projects/game/html/html1.html')))       
 					
 		           	{	
-			            alert("Congrats!! \n You Won");
-	                }
+					   if(global_key == "x") 
+					   {  
+					     alert(" Congrates!!\n\n X Wins!! \n\n\n         press OK to restart game");
+					      myFunction();
+					    }
+					   else if(global_key == "o") 
+					   {
+					      alert(" Congrates!!\n\n 0 Wins!! \n\n\n         press OK to restart game");
+					      myFunction();
+						}
+                    }
+	  
+				//draw logic
 	  else if(count == 9 )
 	    {
-		    alert("draw!! \n play again");
+		    alert("draw!! \n play again \n\n                            click Reset button to play again");
 		} 
 	}
+	    //reset logic
 	  function myFunction(){
 	        
 			     document.getElementById("demo").children[0].src = '';
@@ -98,9 +111,9 @@
 </script>
 </head>
 <body>
-<h1><center>Tic-Tac-Toe Game</center></h1>
+<h1><center>Tic-Tac-Toe Game</center></h1><br />
 <center>
-<div id="game">
+<div id="container">
 <div class = "flex-container">
 <div id="demo" class = "one" onClick="displayRandomImage(this)">
 <img src = ""/>
@@ -140,7 +153,7 @@
 </div>
 </div>
 </div>
-</center>
+</center><br /><br />
 <center><button id = "reset" onclick="myFunction()"> Restart </button> </center>
 </body>
 </html>

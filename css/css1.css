@@ -2,7 +2,7 @@
 @media only screen and (min-width:960px){
         /* styles for browsers larger than 960px; */
 		body{
-		    background-color:#CCCCCC;
+		    background-color:#FFFFFF;
 			}
     }
     @media only screen and (min-width:1440px){
@@ -49,27 +49,29 @@
 .flex-container {
   
     display: flex;
-    width: 300px;
-    height: 71px;
+    width: 259px;
+    height: 72px;
 	padding: 5px;
 	align-items: flex-start;
-	
+	cursor:pointer;
 }
 .flex-container1 {
   
     display: flex;
-    width: 300px;
-    height: 84px;
+    width: 259px;
+    height: 92px;
 	padding: 5px;
 	align-items: center;
+	cursor:pointer;
 }
 .flex-container2 {
   
     display: flex;
-    width: 300px;
-    height: 70px;
+    width: 259px;
+    height: 72px;
 	padding: 5px;
 	align-items: flex-end;
+	cursor:pointer;
 }
 img {
 max-width: 100%;
@@ -79,18 +81,27 @@ width: auto;
 .one{
  border:double;
  float: left;
- background-color: #00CCFF;
+ background-color:#FFFFFF;
  width: 80px;
  height: 75px;
- /*padding: 20px; 
- margin: 50px auto 30px auto;*/
+ margin:2px;
  } 
- 
+#container{
+  border-radius:4px;
+  background:#007fff;
+  width:300px;
+  height:305px;
+  padding-top:50px;
+  padding-bottom:0;
+  padding-left:50px;
+  box-shadow: 0 5px 10px black;
+  text-align: center;
+}
 #reset{
      background-color:#9999FF;
 	 text-align:center;
 	 width:107px;
-	 height:32px;
+	 height:35px;
 	 cursor:pointer;
 	 font-size:20px;
 	 padding: 5px 10px;
