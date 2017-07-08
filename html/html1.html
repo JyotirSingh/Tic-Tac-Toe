@@ -14,7 +14,7 @@
         var img = {};
 	    img["x"] ="../image/IMG_20170707_154212.jpg";
 	    img["o"] = "../image/IMG_20170707_153859.jpg";
-		//random image display
+		 //random image display
         function displayRandomImage(ele){                      
         if(global_key == ''){
 	               var keys = Object.keys(img);
@@ -23,22 +23,26 @@
                    var img1 = img[keys1];
 		           if(ele.children[0].getAttribute('src') == ''){
 				             ele.children[0].src = img1;
+							
 							 count++;
 		           }else
 				     {
 				       alert("Already Selected");
 	                 }
                  }
-	   else{
+	    else{
             //turn logic
+		
          switch(global_key){
           
 		                     case "x":
 	                                   if(ele.children[0].getAttribute('src') == ''){
 		                                     ele.children[0].src = img["o"];
-											   global_key = "o";
-											   count++;
-                                       }else
+											 ele.children[0].addEventListener('load', CheckWinCondition);
+											 global_key = "o";
+											 count++;
+                                       }
+									   else
 				                       {
                                          alert("Already Selected");
                                        }
@@ -46,6 +50,7 @@
                               case "o":
 		                                if(ele.children[0].getAttribute('src') == ''){
 		                                   ele.children[0].src = img["x"]; 
+										   ele.children[0].addEventListener('load', CheckWinCondition);
 										   global_key = "x";
 										   count++;
                                         }else
@@ -55,16 +60,21 @@
   	                                    break;
                               }  
             }
-	        //winner logic
-	  t[0] = document.getElementById("demo").children[0].src; 
-	  t[1] = document.getElementById("demo1").children[0].src;
-	  t[2] = document.getElementById("demo2").children[0].src; 
-	  t[3] = document.getElementById("demo3").children[0].src;
-	  t[4] = document.getElementById("demo4").children[0].src; 
-	  t[5] = document.getElementById("demo5").children[0].src;
-	  t[6] = document.getElementById("demo6").children[0].src;
-	  t[7] = document.getElementById("demo7").children[0].src,
-	  t[8] = document.getElementById("demo8").children[0].src;
+	      
+	
+		  
+}
+	  function CheckWinCondition()
+	  {
+	   t[0] = document.getElementById("demo").children[0].src; 
+	   t[1] = document.getElementById("demo1").children[0].src;
+	   t[2] = document.getElementById("demo2").children[0].src; 
+	   t[3] = document.getElementById("demo3").children[0].src;
+	   t[4] = document.getElementById("demo4").children[0].src; 
+	   t[5] = document.getElementById("demo5").children[0].src;
+	   t[6] = document.getElementById("demo6").children[0].src;
+	   t[7] = document.getElementById("demo7").children[0].src,
+	   t[8] = document.getElementById("demo8").children[0].src;
 	  
        	
 	  if(count >= 4 && ((t[0] == t[1] && t[1] == t[2] && t[0] != 'file:///C:/Projects/game/html/html1.html')  ||
@@ -81,6 +91,7 @@
 					   {  
 					      s++;
 						  document.getElementById("spn").innerHTML = s;
+						  
 					      alert(" Congrates!!\n\n X Wins!!");
 				          alert(" X has won the game. \n press OK to start new game.");
 						  myFunction();
@@ -89,9 +100,10 @@
 					   {
 					      a++;
 						  document.getElementById("spn1").innerHTML = a;
-						  alert(" Congrates!!\n\n 0 Wins!!");		
-						  alert(" 0 has won the game. \n press OK to start new game.");
-						  myFunction();  
+						    alert(" Congrates!!\n\n 0 Wins!!");
+				          alert(" 0 has won the game. \n press OK to start new game.");
+						  myFunction();
+						  
 						}
                     }
 	  
@@ -100,7 +112,8 @@
 	    {
 		    alert("draw!! \n play again \n\n                            click Reset button to play again");
 		} 
-	}
+	  }
+	  
 	    //reset logic
 	  function myFunction(){
 	        
@@ -126,10 +139,10 @@
 <div id="container">
 <div class = "flex-container">
 <div id="demo" class = "one" onClick="displayRandomImage(this)">
-<img src = ""/>
+<img src = "" />
 </div>
 <div id="demo1" class = "one" onClick="displayRandomImage(this)">
-<img src = ""/>
+<img src = "" />
 </div>
 
 <div id="demo2" class = "one" onClick="displayRandomImage(this)">
@@ -138,28 +151,28 @@
 </div>
 <div class="flex-container1">
 <div id="demo3" class = "one" onClick="displayRandomImage(this)">
-<img src = ""/>
+<img src = "" />
 </div>
 
 <div id="demo4" class = "one" onClick="displayRandomImage(this)">
-<img src = ""/>
+<img src = "" />
 </div>
 
 <div id="demo5" class = "one" onClick="displayRandomImage(this)">
-<img src = ""/>
+<img src = "" />
 </div>
 </div>
 <div class="flex-container2">
 <div id="demo6" class = "one" onClick="displayRandomImage(this)">
-<img src = ""/>
+<img src = "" />
 </div>
 
 <div id="demo7" class = "one" onClick="displayRandomImage(this)">
-<img src = ""/>
+<img src = "" />
 </div>
 
 <div id="demo8" class = "one" onClick="displayRandomImage(this)">
-<img src = ""/>
+<img src = "" />
 </div>
 </div>
 </div>
