@@ -8,9 +8,9 @@
 <script>
         var global_key = '';
 		var count = 0;
-		var t = [];
 		var s = 0;
 		var a = 0;
+		var t = [];
         var img = {};
 	    img["x"] ="../image/IMG_20170707_154212.jpg";
 	    img["o"] = "../image/IMG_20170707_153859.jpg";
@@ -81,15 +81,17 @@
 					   {  
 					      s++;
 						  document.getElementById("spn").innerHTML = s;
-					      alert(" Congrates!!\n\n X Wins!! \n\n\n         press OK to restart game");
-					      myFunction();
-					    }
+					      alert(" Congrates!!\n\n X Wins!!");
+				          alert(" X has won the game. \n press OK to start new game.");
+						  myFunction();
+					   }
 					   else if(global_key == "o") 
 					   {
 					      a++;
 						  document.getElementById("spn1").innerHTML = a;
-						  alert(" Congrates!!\n\n 0 Wins!! \n\n\n         press OK to restart game");
-					      myFunction();
+						  alert(" Congrates!!\n\n 0 Wins!!");		
+						  alert(" 0 has won the game. \n press OK to start new game.");
+						  myFunction();  
 						}
                     }
 	  
@@ -162,6 +164,6 @@
 </div>
 </div>
 </center><br /><br />
-<center><button id = "reset" onclick="myFunction()"> Restart </button> </center>
+<center><button id = "reset" onclick="myFunction()"> Restart </button> </center> 
 </body>
 </html>
