@@ -34,7 +34,7 @@
                    var img1 = img[keys1];
 		           if(ele.children[0].getAttribute('src') == ''){
 				              ele.children[0].src = img1;
-							 if(ele.children[0].src == img["x"]){
+							 if(img1 == img["x"]){
 							 document.getElementById("win").innerHTML = " Player 0 turn";
 							 }else{
 							  document.getElementById("win").innerHTML = " Player X turn";
@@ -57,9 +57,9 @@
 		                     case "x":
 	                                   if(ele.children[0].getAttribute('src') == ''){
 									         if(b == 0){
+											 ele.children[0].src = img["o"];
 											 document.getElementById("win").innerHTML = " Player X turn";
-		                                     ele.children[0].src = img["o"];
-											 global_key = "o";
+		                                     global_key = "o";
 											 count++;
 											 }else{
 											 myFunction();
@@ -76,8 +76,8 @@
                               case "o":
 		                                if(ele.children[0].getAttribute('src') == ''){
 		                                   if(b == 0){
-										   document.getElementById("win").innerHTML = " Player 0 turn";
 										   ele.children[0].src = img["x"]; 
+										   document.getElementById("win").innerHTML = " Player 0 turn";
 										   global_key = "x";
 										   count++;
 										   }else{
@@ -153,7 +153,12 @@
 				 document.getElementById("demo8").children[0].src = '';
 				 document.getElementById("win").innerHTML = '';
 				 count = 0;
-	          
+				 if(global_key == "x"){
+				               
+				 document.getElementById("win").innerHTML = " Player 0 turn";
+				 }else{
+				 document.getElementById("win").innerHTML = " Player X turn";
+				 }
           }	
 </script>
 </head>
