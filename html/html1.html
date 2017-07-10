@@ -15,17 +15,33 @@
         var img = {};
 	    img["x"] ="../image/IMG_20170707_154212.jpg";
 	    img["o"] = "../image/IMG_20170707_153859.jpg";
+		 var keys = Object.keys(img);
+	     var keys1 = keys[Math.floor(Math.random()*keys.length)];
+		 function turn(){
+							 if(keys1 == keys[0])
+							 {
+							    document.getElementById("win").innerHTML = " Player X turn";
+								
+						     }else{
+							    document.getElementById("win").innerHTML = " Player 0 turn";
+							}
+			            }			
 		 //random image display
         function displayRandomImage(ele){                      
         if(global_key == ''){
-	               var keys = Object.keys(img);
-	               var keys1 = keys[Math.floor(Math.random()*keys.length)];
+	              
 	               global_key = keys1;
                    var img1 = img[keys1];
 		           if(ele.children[0].getAttribute('src') == ''){
-				             ele.children[0].src = img1;
-							 count++;
-							 
+				              ele.children[0].src = img1;
+							 if(ele.children[0].src == img["x"]){
+							 document.getElementById("win").innerHTML = " Player 0 turn";
+							 }else{
+							  document.getElementById("win").innerHTML = " Player X turn";
+							 }
+                              
+							     count++;
+								 						   	 						 
 		           }else
 				     {
 				       alert("Already Selected");
@@ -41,6 +57,7 @@
 		                     case "x":
 	                                   if(ele.children[0].getAttribute('src') == ''){
 									         if(b == 0){
+											 document.getElementById("win").innerHTML = " Player X turn";
 		                                     ele.children[0].src = img["o"];
 											 global_key = "o";
 											 count++;
@@ -59,6 +76,7 @@
                               case "o":
 		                                if(ele.children[0].getAttribute('src') == ''){
 		                                   if(b == 0){
+										   document.getElementById("win").innerHTML = " Player 0 turn";
 										   ele.children[0].src = img["x"]; 
 										   global_key = "x";
 										   count++;
@@ -139,7 +157,7 @@
           }	
 </script>
 </head>
-<body>
+<body onload="turn()">
 <h1><center>Tic-Tac-Toe</center></h1>
 <center>
 <div><pre><p><span id="time"><b>X Won</b></span><span id="spn"> 0 </span><span id="time1"><b>time(s)</b></span></p>
