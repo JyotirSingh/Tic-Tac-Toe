@@ -94,7 +94,6 @@
    border: 2px solid #CCCCCC;
    position: static;
    } 
-
 .flex-container {
   
     display: flex;
@@ -145,6 +144,10 @@ width: auto;
   padding-left:50px;
   box-shadow: 0 5px 10px black;
   text-align: center;
+}
+#win{
+    color:#CC0000;
+	font-size: 24px;
 }
 #reset{
      background-color:#FFFFFF;
