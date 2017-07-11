@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <title>Tic-Tac-Toe game</title>
-<link rel = "stylesheet" type = "text/css" href = "../css/css1.css" />
+<link rel = "stylesheet" type = "text/css" href = "../css/main.css" />
 <script type="text/javascript">
         var global_key = '';
 		var count = 0;
@@ -12,6 +12,7 @@
 		var a = 0;
 		var t = [];
 		var b = 0;
+		var d = "file:///C:/Projects/game/html/index.html";
         var img = {};
 	    img["x"] ="../image/IMG_20170707_154212.jpg";
 	    img["o"] = "../image/IMG_20170707_153859.jpg";
@@ -32,7 +33,7 @@
 	              
 	               global_key = keys1;
                    var img1 = img[keys1];
-		           if(ele.children[0].getAttribute('src') == ''){
+		           if(ele.children[0].getAttribute('src') != d){
 				              ele.children[0].src = img1;
 							 if(img1 == img["x"]){
 							 document.getElementById("win").innerHTML = " Player 0 turn";
@@ -55,7 +56,7 @@
          switch(global_key){
           
 		                     case "x":
-	                                   if(ele.children[0].getAttribute('src') == ''){
+	                                   if(ele.children[0].getAttribute('src') != d){
 									         if(b == 0){
 											 ele.children[0].src = img["o"];
 											 document.getElementById("win").innerHTML = " Player X turn";
@@ -74,7 +75,7 @@
                                        }
 	                                   break;
                               case "o":
-		                                if(ele.children[0].getAttribute('src') == ''){
+		                                if(ele.children[0].getAttribute('src') != d){
 		                                   if(b == 0){
 										   ele.children[0].src = img["x"]; 
 										   document.getElementById("win").innerHTML = " Player 0 turn";
@@ -105,14 +106,14 @@
 	   t[8] = document.getElementById("demo8").children[0].src;
 	  
        	
-	  if(count >= 4 && ((t[0] == t[1] && t[1] == t[2] && t[0] != 'file:///C:/Projects/game/html/html1.html')  ||
-				        (t[0] == t[3] && t[3] == t[6] && t[0] != 'file:///C:/Projects/game/html/html1.html')  ||  
-					    (t[0] == t[4] && t[4] == t[8] && t[0] != 'file:///C:/Projects/game/html/html1.html')  ||
-					    (t[1] == t[4] && t[4] == t[7] && t[1] != 'file:///C:/Projects/game/html/html1.html')  ||  
-					    (t[2] == t[5] && t[5] == t[8] && t[2] != 'file:///C:/Projects/game/html/html1.html')  ||  
-					    (t[2] == t[4] && t[4] == t[6] && t[2] != 'file:///C:/Projects/game/html/html1.html')  ||   
-					    (t[3] == t[4] && t[4] == t[5] && t[3] != 'file:///C:/Projects/game/html/html1.html')  || 
-					    (t[6] == t[7] && t[7] == t[8] && t[6] != 'file:///C:/Projects/game/html/html1.html')))       
+	  if(count >= 4 && ((t[0] == t[1] && t[1] == t[2] && t[0] != d)  ||
+				        (t[0] == t[3] && t[3] == t[6] && t[0] != d)  ||  
+					    (t[0] == t[4] && t[4] == t[8] && t[0] != d)  ||
+					    (t[1] == t[4] && t[4] == t[7] && t[1] != d)  ||  
+					    (t[2] == t[5] && t[5] == t[8] && t[2] != d)  ||  
+					    (t[2] == t[4] && t[4] == t[6] && t[2] != d)  ||   
+					    (t[3] == t[4] && t[4] == t[5] && t[3] != d)  || 
+					    (t[6] == t[7] && t[7] == t[8] && t[6] != d)))       
 					
 		           	{	
 					   if(global_key == "x") 
@@ -147,7 +148,7 @@
 		    document.getElementById("demo4").style.display = "none";
 		    document.getElementById("demo5").style.display = "none";
 		    document.getElementById("msg").style.display = "inline";
-		    document.getElementById("msg").innerHTML = "draw!!play again..click Reset button to play again";
+		    document.getElementById("msg").innerHTML = "draw!!play again.." + "<br/>" + "<br/>" +  "click Reset button to play again";
 		} 
 		
  }
