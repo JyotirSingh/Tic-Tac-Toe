@@ -44,20 +44,25 @@
 		    background-color:#FFCC99;
 			}
 	}
+h1{
+  color:#990000;
+}
 #time{
-   background-color: #CCCCCC;
+   background-color: #666666;
+   color: #FFFFFF;
    width: 85px;
    height: 20px;
    padding: 5px;
-   border: 2px solid #CCCCCC;
+   border: 2px solid #666666;
    position: static;
    }
 #time1{
-   background-color: #CCCCCC;
+   background-color: #666666;
+   color: #FFFFFF;
    width: 85px;
    height: 20px;
    padding: 5px;
-   border: 2px solid #CCCCCC;
+   border: 2px solid #666666;
    position: static;
    }
 
@@ -66,34 +71,48 @@
    width:85px;
    height: 20px;
    padding: 5px;
-   border: 2px solid #CCCCCC;
+   border: 2px solid #666666;
    position: static;
    } 
 #time2{
-   background-color: #CCCCCC;
+   background-color: #666666;
+   color: #FFFFFF;
    width: 85px;
    height: 20px;
    padding: 5px;
-   border: 2px solid #CCCCCC;
+   border: 2px solid #666666;
    position: static;
    }
 #time3{
-   background-color: #CCCCCC;
+   background-color: #666666;
+   color: #FFFFFF;
    width: 85px;
    height: 20px;
    padding: 5px;
-   border: 2px solid #CCCCCC;
+   border: 2px solid #666666;
    position: static;
    }
 
 #spn1{
-   background-color: #FFFFFF;
+   background-color:#FFFFFF;
    width:85px;
    height: 20px;
    padding: 5px;
-   border: 2px solid #CCCCCC;
+   border: 2px solid #666666;
    position: static;
-   } 
+   }
+ #msg{
+    color: #FF0000;
+    text-align: center;
+	display: none;
+	position: relative;
+	width: 320px;
+	border: solid;
+	height: 92px;
+	background-color: #FFFFFF;
+	padding: 5px;
+}
+    
 .flex-container {
   
     display: flex;
@@ -136,7 +155,7 @@ width: auto;
  } 
 #container{
   border-radius:4px;
-  background:#007fff;
+  background-color: #007fff;
   width:315px;
   height:315px;
   padding-top:50px;
