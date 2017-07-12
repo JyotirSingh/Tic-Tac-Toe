@@ -33,15 +33,14 @@
 	              
 	               global_key = keys1;
                    var img1 = img[keys1];
-		           if(ele.children[0].getAttribute('src') != d){
+		           if(ele.children[0].getAttribute('src') == ' '){
 				              ele.children[0].src = img1;
 							 if(img1 == img["x"]){
 							 document.getElementById("win").innerHTML = " Player 0 turn";
 							 }else{
 							  document.getElementById("win").innerHTML = " Player X turn";
 							 }
-                              
-							     count++;
+					       count++;
 								 						   	 						 
 		           }else
 				     {
@@ -56,7 +55,7 @@
          switch(global_key){
           
 		                     case "x":
-	                                   if(ele.children[0].getAttribute('src') != d){
+	                                   if(ele.children[0].getAttribute('src') == ' '){
 									         if(b == 0){
 											 ele.children[0].src = img["o"];
 											 document.getElementById("win").innerHTML = " Player X turn";
@@ -75,7 +74,7 @@
                                        }
 	                                   break;
                               case "o":
-		                                if(ele.children[0].getAttribute('src') != d){
+		                                if(ele.children[0].getAttribute('src') == ' '){
 		                                   if(b == 0){
 										   ele.children[0].src = img["x"]; 
 										   document.getElementById("win").innerHTML = " Player 0 turn";
@@ -124,6 +123,7 @@
 						  document.getElementById("demo3").style.display = "none";
 						  document.getElementById("demo4").style.display = "none";
 						  document.getElementById("demo5").style.display = "none";
+						  document.getElementById("win").innerHTML = '';
 						  document.getElementById("msg").style.display = "inline";
 				          document.getElementById("msg").innerHTML = " X has won the Game!! start new game." + "<br/>" + "<br/>" + "Restart!! To Play                                                                                                                                 Again.."; 
 						   
@@ -136,6 +136,7 @@
 						  document.getElementById("demo3").style.display = "none";
 						  document.getElementById("demo4").style.display = "none";
 						  document.getElementById("demo5").style.display = "none";
+						  document.getElementById("win").innerHTML = '';
 						  document.getElementById("msg").style.display = "inline";
 						  document.getElementById("msg").innerHTML = " 0 has won the Game!! start new game." + "<br/>" + "<br/>" + "Restart!! To Play                                                                                                                                         Again..";
 						}
@@ -143,40 +144,46 @@
 	  
 				//draw logic
 	  else if(count == 9 )
-	    {
+	    {    
 		    document.getElementById("demo3").style.display = "none";
 		    document.getElementById("demo4").style.display = "none";
 		    document.getElementById("demo5").style.display = "none";
+		    document.getElementById("win").innerHTML = '';
 		    document.getElementById("msg").style.display = "inline";
 		    document.getElementById("msg").innerHTML = "draw!!play again.." + "<br/>" + "<br/>" +  "click Reset button to play again";
+			
 		} 
 		
- }
-	  
+ }   
 	    //reset logic
 	  function myFunction(){
 	        
-			     document.getElementById("demo").children[0].src = '';
-				 document.getElementById("demo1").children[0].src = '';
-				 document.getElementById("demo2").children[0].src = '';
-				 document.getElementById("demo3").children[0].src = '';
-				 document.getElementById("demo4").children[0].src = '';
-				 document.getElementById("demo5").children[0].src = '';
-				 document.getElementById("demo6").children[0].src = '';
-				 document.getElementById("demo7").children[0].src = '';
-				 document.getElementById("demo8").children[0].src = '';
-				 document.getElementById("msg").style.display = "none";
-				 document.getElementById("msg").innerHTML = '';
-			     document.getElementById("demo3").style.display = "inline";
+			     document.getElementById("demo").children[0].src = ' ';
+				 document.getElementById("demo1").children[0].src = ' ';
+				 document.getElementById("demo2").children[0].src = ' ';
+				 document.getElementById("demo3").children[0].src = ' ';
+				 document.getElementById("demo4").children[0].src = ' ';
+				 document.getElementById("demo5").children[0].src = ' ';
+				 document.getElementById("demo6").children[0].src = ' ';
+				 document.getElementById("demo7").children[0].src = ' ';
+				 document.getElementById("demo8").children[0].src = ' ';
+				 document.getElementById("demo3").style.display = "inline";
 			     document.getElementById("demo4").style.display = "inline";
 	    		 document.getElementById("demo5").style.display = "inline";
+				 document.getElementById("msg").style.display = "none";
+				 document.getElementById("msg").innerHTML = '';
 				 count = 0;
-				 if(global_key == "x"){
-				               
-				 document.getElementById("win").innerHTML = " Player 0 turn";
-				 }else{
-				 document.getElementById("win").innerHTML = " Player X turn";
-				 }
+				 b = 0;
+				  if(global_key == "x")
+				  {
+					 document.getElementById("win").innerHTML = " Player 0 turn";
+					 
+								
+				}else{
+				     document.getElementById("win").innerHTML = " Player X turn";
+					}
+				 
+			            			
           }	
 </script>
 </head>
@@ -189,41 +196,41 @@
 <div id="container">
 <div class = "flex-container">
 <div id="demo" class = "one" onClick="displayRandomImage(this)">
-<img src = "" />
+<img src = " " />
 </div>
 <div id="demo1" class = "one" onClick="displayRandomImage(this)">
-<img src = "" />
+<img src = " " />
 </div>
 
 <div id="demo2" class = "one" onClick="displayRandomImage(this)">
-<img src = ""/>
+<img src = " "/>
 </div>
 </div>
 <div class="flex-container1">
 <div id="msg"></div>
 <div id="demo3" class = "one" onClick="displayRandomImage(this)">
-<img src = "" />
+<img src = " " />
 </div>
 
 <div id="demo4" class = "one" onClick="displayRandomImage(this)">
-<img src = "" />
+<img src = " " />
 </div>
 
 <div id="demo5" class = "one" onClick="displayRandomImage(this)">
-<img src = "" />
+<img src = " " />
 </div>
 </div>
 <div class="flex-container2">
 <div id="demo6" class = "one" onClick="displayRandomImage(this)">
-<img src = "" />
+<img src = " " />
 </div>
 
 <div id="demo7" class = "one" onClick="displayRandomImage(this)">
-<img src = "" />
+<img src = " " />
 </div>
 
 <div id="demo8" class = "one" onClick="displayRandomImage(this)">
-<img src = "" />
+<img src = " " />
 </div>
 </div>
 </div>
