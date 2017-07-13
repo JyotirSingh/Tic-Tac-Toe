@@ -48,8 +48,9 @@
 				       alert("Already Selected");
 					   s=0;
 					   a=0;
-	                 }
-                 }
+					   c=0;
+					 }
+			}
 	    else{
             //turn logic
 		
@@ -126,13 +127,12 @@
 						  }
 						  else{
 						  document.getElementById("spn").innerHTML = s;
-						  document.getElementById("time1").innerHTML = "times";
+						  document.getElementById("time1").innerHTML = "<b>times</b>";
 						  } 
 						  document.getElementById("win").innerHTML = ' ';
 						  document.getElementById("msg").style.display = "inline-block";
 						  document.getElementById("reset1").style.display = "inline-block";
-				          document.getElementById("msg1").innerHTML = " X has won the Game!!"+"<br/>"+"Press OK To Play Again..."; 
-						   
+				          document.getElementById("msg1").innerHTML = "<b>X has won the Game!!</b>"+"<br/>"+"<b>Press OK To Play Again...</b>";
 					   }
 					   else if(global_key == "o") 
 					   {
@@ -143,12 +143,12 @@
 						  }
 						  else{
 						  document.getElementById("spn1").innerHTML = a;
-						  document.getElementById("time3").innerHTML = "times";
+						  document.getElementById("time3").innerHTML = "<b>times</b>";
 						  } 
 						  document.getElementById("win").innerHTML = ' ';
 						  document.getElementById("msg").style.display = "inline-block";
 						  document.getElementById("reset1").style.display = "inline-block";
-						  document.getElementById("msg1").innerHTML = " 0 has won the Game!!"+"<br/>"+"Press OK To Play Again..."; 
+						  document.getElementById("msg1").innerHTML = "<b>0 has won the Game!!</b>"+"<br/>"+"<b>Press OK To Play Again...</b>"; 
 						}
                     }
 	  
@@ -161,12 +161,12 @@
 			 }
 			 else{
 			document.getElementById("spn2").innerHTML = c;
-		    document.getElementById("time5").innerHTML = "times";
+		    document.getElementById("time5").innerHTML = "<b>times</b>";
 		    } 
 		    document.getElementById("win").innerHTML = ' ';
 		    document.getElementById("msg").style.display = "inline-block";
 			document.getElementById("reset1").style.display = "inline-block";
-		    document.getElementById("msg1").innerHTML = "ohh!! it's a draw!!"+"<br/>"+"Press OK To Play Again..."; 
+		    document.getElementById("msg1").innerHTML = "<b>ohh!! it's a draw!!</b>"+"<br/>"+"<b>Press OK To Play Again...</b>"; 
 			
 		} 
 		
@@ -209,7 +209,7 @@
 <p><span id="time4"><b>Draw</b></span><span id="spn2"> 0 </span><span id="time5"><b>time</b></span></p></div>
 <div id="win"></div>
 <div id="container">
-<div id="msg">
+<div id="msg"><br />
 <p id="msg1"></p>
 <p><button id = "reset1" onClick="myFunction()"> OK </button></p></div>
 <div id="msg2">
