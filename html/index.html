@@ -128,9 +128,6 @@
 						  document.getElementById("spn").innerHTML = s;
 						  document.getElementById("time1").innerHTML = "times";
 						  } 
-						  document.getElementById("demo3").style.display = "none";
-						  document.getElementById("demo4").style.display = "none";
-						  document.getElementById("demo5").style.display = "none";
 						  document.getElementById("win").innerHTML = ' ';
 						  document.getElementById("msg").style.display = "inline-block";
 						  document.getElementById("reset1").style.display = "inline-block";
@@ -148,9 +145,6 @@
 						  document.getElementById("spn1").innerHTML = a;
 						  document.getElementById("time3").innerHTML = "times";
 						  } 
-						  document.getElementById("demo3").style.display = "none";
-						  document.getElementById("demo4").style.display = "none";
-						  document.getElementById("demo5").style.display = "none";
 						  document.getElementById("win").innerHTML = ' ';
 						  document.getElementById("msg").style.display = "inline-block";
 						  document.getElementById("reset1").style.display = "inline-block";
@@ -169,9 +163,6 @@
 			document.getElementById("spn2").innerHTML = c;
 		    document.getElementById("time5").innerHTML = "times";
 		    } 
-		    document.getElementById("demo3").style.display = "none";
-		    document.getElementById("demo4").style.display = "none";
-		    document.getElementById("demo5").style.display = "none";
 		    document.getElementById("win").innerHTML = ' ';
 		    document.getElementById("msg").style.display = "inline-block";
 			document.getElementById("reset1").style.display = "inline-block";
@@ -192,9 +183,6 @@
 				 document.getElementById("demo6").children[0].src = ' ';
 				 document.getElementById("demo7").children[0].src = ' ';
 				 document.getElementById("demo8").children[0].src = ' ';
-				 document.getElementById("demo3").style.display = "inline";
-			     document.getElementById("demo4").style.display = "inline";
-	    		 document.getElementById("demo5").style.display = "inline";
 				 document.getElementById("msg").style.display = "none";
 				 document.getElementById("msg1").innerHTML = ' ';
 				 document.getElementById("reset1").style.display = "none";
@@ -221,6 +209,10 @@
 <p><span id="time4"><b>Draw</b></span><span id="spn2"> 0 </span><span id="time5"><b>time</b></span></p></div>
 <div id="win"></div>
 <div id="container">
+<div id="msg">
+<p id="msg1"></p>
+<p><button id = "reset1" onClick="myFunction()"> OK </button></p></div>
+<div id="msg2">
 <div class = "flex-container">
 <div id="demo" class = "one" onClick="displayRandomImage(this)">
 <img src = " " />
@@ -234,9 +226,6 @@
 </div>
 </div>
 <div class="flex-container1">
-<div id="msg"><br /><br />
-<p id="msg1"></p>
-<p><button id = "reset1" onClick="myFunction()"> OK </button></p></div>
 <div id="demo3" class = "one" onClick="displayRandomImage(this)">
 <img src = " " />
 </div>
@@ -260,6 +249,7 @@
 
 <div id="demo8" class = "one" onClick="displayRandomImage(this)">
 <img src = " " />
+</div>
 </div>
 </div>
 </div>
