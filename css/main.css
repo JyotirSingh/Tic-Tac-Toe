@@ -128,7 +128,11 @@ h1{
    border: 2px solid #666666;
    position: static;
    }
- #msg{
+#win{
+    color:#CC0000;
+	font-size: 24px;
+}
+#msg{
     color: #000000;
 	font-size: 23px;
     text-align: center;
@@ -152,6 +156,19 @@ h1{
     z-index: 0;
 	position: absolute;
 }
+#container{
+  border-radius:4px;
+  background-color: #007fff;
+  width:315px;
+  height:315px;
+  padding-top:50px;
+  padding-bottom:0;
+  padding-left:50px;
+  box-shadow: 0 5px 10px black;
+  text-align: center;
+  position: relative;
+}
+
 .flex-container {
   
     display: flex;
@@ -192,22 +209,6 @@ width: auto;
  height: 75px;
  margin:2px;
  } 
-#container{
-  border-radius:4px;
-  background-color: #007fff;
-  width:315px;
-  height:315px;
-  padding-top:50px;
-  padding-bottom:0;
-  padding-left:50px;
-  box-shadow: 0 5px 10px black;
-  text-align: center;
-  position: relative;
-}
-#win{
-    color:#CC0000;
-	font-size: 24px;
-}
 #reset{
      background-color:#FFFFFF;
 	 text-align:center;
