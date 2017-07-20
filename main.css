@@ -1,0 +1,244 @@
+/* CSS Document */
+
+@media only screen and (min-width: 960px) {
+    /* styles for browsers larger than 1440px; */
+
+    body {
+        background-color: #CCFFFF;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    /* styles for browsers larger than 1440px; */
+
+    body {
+        background-color: #CCFFFF;
+    }
+}
+@media only screen and (min-width: 2000px) {
+    /* for sumo sized (mac) screens */
+
+    body {
+        background-color: #FFFFFF;
+    }
+}
+@media only screen and (max-device-width: 480px) {
+    /* styles for mobile browsers smaller than 480px; (iPhone) */
+
+    body {
+        background-color: #CCCCCC;
+    }
+}
+@media only screen and (device-width: 768px) {
+    /* default iPad screens */
+
+    body {
+        background-color: #33FFFF;
+    }
+}
+/* different techniques for iPad screening */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* For portrait layouts only */
+
+    body {
+        background-color: #66FFCC;
+    }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* For landscape layouts only */
+
+    body {
+        background-color: #FFCC99;
+    }
+}
+h1 {
+    color: #990000;
+}
+#time {
+    background-color: #666666;
+    color: #FFFFFF;
+    width: 85px;
+    height: 20px;
+    padding: 5px;
+    border: 2px solid #666666;
+    position: static;
+}
+#time1 {
+    background-color: #666666;
+    color: #FFFFFF;
+    width: 85px;
+    height: 20px;
+    padding: 5px;
+    border: 2px solid #666666;
+    position: static;
+}
+#spn {
+    background-color: #FFFFFF;
+    width: 85px;
+    height: 20px;
+    padding: 5px;
+    border: 2px solid #666666;
+    position: static;
+}
+#time2 {
+    background-color: #666666;
+    color: #FFFFFF;
+    width: 85px;
+    height: 20px;
+    padding: 5px;
+    border: 2px solid #666666;
+    position: static;
+}
+#time3 {
+    background-color: #666666;
+    color: #FFFFFF;
+    width: 85px;
+    height: 20px;
+    padding: 5px;
+    border: 2px solid #666666;
+    position: static;
+}
+#spn1 {
+    background-color: #FFFFFF;
+    width: 85px;
+    height: 20px;
+    padding: 5px;
+    border: 2px solid #666666;
+    position: static;
+}
+#time4 {
+    background-color: #666666;
+    color: #FFFFFF;
+    width: 85px;
+    height: 20px;
+    padding: 5px;
+    border: 2px solid #666666;
+    position: static;
+}
+#time5 {
+    background-color: #666666;
+    color: #FFFFFF;
+    width: 85px;
+    height: 20px;
+    padding: 5px;
+    border: 2px solid #666666;
+    position: static;
+}
+#spn2 {
+    background-color: #FFFFFF;
+    width: 85px;
+    height: 20px;
+    padding: 5px;
+    border: 2px solid #666666;
+    position: static;
+}
+#win {
+    color: #CC0000;
+    font-size: 24px;
+}
+#msg {
+    color: #000000;
+    font-size: 23px;
+    text-align: center;
+    display: none;
+    position: absolute;
+    width: 445px;
+    border: solid;
+    border-color: #990000;
+    height: 238px;
+    background-color: #99CCFF;
+    padding: 5px 10px;
+    text-align: center;
+    left: -56px;
+    top: 56px;
+    vertical-align: middle;
+    line-height: 1.5;
+    z-index: 1;
+    opacity: 0.89;
+}
+#msg2 {
+    z-index: 0;
+    position: absolute;
+}
+#container {
+    border-radius: 4px;
+    background-color: #007fff;
+    width: 315px;
+    height: 315px;
+    padding-top: 50px;
+    padding-bottom: 0;
+    padding-left: 50px;
+    box-shadow: 0 5px 10px black;
+    text-align: center;
+    position: relative;
+}
+.flex-container {
+    display: flex;
+    width: 259px;
+    height: 72px;
+    padding: 5px;
+    align-items: flex-start;
+    cursor: pointer;
+}
+.flex-container1 {
+    display: flex;
+    width: 259px;
+    height: 92px;
+    padding: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+.flex-container2 {
+    display: flex;
+    width: 259px;
+    height: 72px;
+    padding: 5px;
+    align-items: flex-end;
+    cursor: pointer;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+}
+.one {
+    border: double;
+    float: left;
+    background-color: #FFFFFF;
+    width: 80px;
+    height: 75px;
+    margin: 2px;
+}
+#reset {
+    background-color: #FFFFFF;
+    text-align: center;
+    width: 135px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: #000000;
+    border: 2px solid #9999FF;
+}
+#reset:hover {
+    background-color: #9999FF;
+    color: #FFFFFF;
+}
+#reset1 {
+    background-color: #99CCFF;
+    text-align: center;
+    width: 80px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: #000000;
+    border: 2px solid black;
+    display: none;
+}
+#reset1:hover {
+    background-color: #990000;
+    color: #FFFFFF;
+}

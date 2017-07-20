@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+	<title>Tic-Tac-Toe game</title>
+	<link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body onload="turn()">
+<h1><center>Tic - Tac - Toe</center></h1>
+<center>
+	<div>
+		<p><span id="time"><b>X Won</b></span><span id="spn"> 0 </span><span id="time1"><b>time</b></span>
+			<span id="time2"><b>0 Won</b></span><span id="spn1"> 0 </span><span id="time3"><b>time</b></span></p>
+		<p><span id="time4"><b>Draw</b></span><span id="spn2"> 0 </span><span id="time5"><b>time</b></span></p>
+	</div>
+	<div id="win"></div>
+	<div id="container">
+		<div id="msg">
+			<br />
+			<p id="msg1"></p>
+			<p>
+				<button id="reset1" onClick="myFunction()"> OK </button>
+			</p>
+		</div>
+		<div id="msg2">
+			<div class="flex-container">
+				<div id="demo" class="one" onClick="displayRandomImage(this)">
+					<img src=" " />
+				</div>
+				<div id="demo1" class="one" onClick="displayRandomImage(this)">
+					<img src=" " />
+				</div>
+
+				<div id="demo2" class="one" onClick="displayRandomImage(this)">
+					<img src=" " />
+				</div>
+			</div>
+			<div class="flex-container1">
+				<div id="demo3" class="one" onClick="displayRandomImage(this)">
+					<img src=" " />
+				</div>
+
+				<div id="demo4" class="one" onClick="displayRandomImage(this)">
+					<img src=" " />
+				</div>
+
+				<div id="demo5" class="one" onClick="displayRandomImage(this)">
+					<img src=" " />
+				</div>
+			</div>
+			<div class="flex-container2">
+				<div id="demo6" class="one" onClick="displayRandomImage(this)">
+					<img src=" " />
+				</div>
+
+				<div id="demo7" class="one" onClick="displayRandomImage(this)">
+					<img src=" " />
+				</div>
+
+				<div id="demo8" class="one" onClick="displayRandomImage(this)">
+					<img src=" " />
+				</div>
+			</div>
+		</div>
+	</div>
+</center>
+<br />
+<center>
+	<button id="reset" onClick="myFunction()"> Restart </button>
+</center>
+
+<script type="text/javascript">
+	var global_key = '';
+	var count = 0;
+	var s = 0;
+	var a = 0;
+	var c = 0;
+	var t = [];
+	var b = 0;
+	var d = "file:///C:/Projects/game/html/index.html";
+	var img = {};
+	img["x"] = "image/IMG_20170707_154212.jpg";
+	img["o"] = "image/IMG_20170707_153859.jpg";
+	var keys = Object.keys(img);
+	var keys1 = keys[Math.floor(Math.random() * keys.length)];
+
+	function turn() {
+		if (keys1 == keys[0]) {
+			document.getElementById("win").innerHTML = " Player X turn";
+
+		} else {
+			document.getElementById("win").innerHTML = " Player 0 turn";
+		}
+	}
+
+	//random image display
+	function displayRandomImage(ele) {
+		if (global_key == '') {
+			global_key = keys1;
+			var img1 = img[keys1];
+			if (ele.children[0].getAttribute('src') == ' ') {
+				ele.children[0].src = img1;
+				if (img1 == img["x"]) {
+					document.getElementById("win").innerHTML = " Player 0 turn";
+				} else {
+					document.getElementById("win").innerHTML = " Player X turn";
+				}
+				count++;
+
+			} else {
+
+				alert("Already Selected");
+				s = 0;
+				a = 0;
+				c = 0;
+			}
+		} else {
+			switch (global_key) {
+				case "x":
+					if (ele.children[0].getAttribute('src') == ' ') {
+						if (b == 0) {
+							ele.children[0].src = img["o"];
+							document.getElementById("win").innerHTML = " Player X turn";
+							global_key = "o";
+							count++;
+						} else {
+							myFunction();
+							b = 0;
+						}
+					} else {
+						alert("Already Selected");
+						s = 0;
+						a = 0;
+						c = 0;
+					}
+					break;
+				case "o":
+					if (ele.children[0].getAttribute('src') == ' ') {
+						if (b == 0) {
+							ele.children[0].src = img["x"];
+							document.getElementById("win").innerHTML = " Player 0 turn";
+							global_key = "x";
+							count++;
+						} else {
+							myFunction();
+							b = 0;
+						}
+					} else {
+						alert("Already Selected");
+						s = 0;
+						a = 0;
+					}
+					break;
+			}
+		}
+	}
+	t[0] = document.getElementById("demo").children[0].src;
+	t[1] = document.getElementById("demo1").children[0].src;
+	t[2] = document.getElementById("demo2").children[0].src;
+	t[3] = document.getElementById("demo3").children[0].src;
+	t[4] = document.getElementById("demo4").children[0].src;
+	t[5] = document.getElementById("demo5").children[0].src;
+	t[6] = document.getElementById("demo6").children[0].src;
+	t[7] = document.getElementById("demo7").children[0].src;
+	t[8] = document.getElementById("demo8").children[0].src;
+
+	if (count >= 4 && ((t[0] == t[1] && t[1] == t[2] && t[0] != d) ||
+			           (t[0] == t[3] && t[3] == t[6] && t[0] != d) ||
+			           (t[0] == t[4] && t[4] == t[8] && t[0] != d) ||
+			           (t[1] == t[4] && t[4] == t[7] && t[1] != d) ||
+			           (t[2] == t[5] && t[5] == t[8] && t[2] != d) ||
+			           (t[2] == t[4] && t[4] == t[6] && t[2] != d) ||
+			           (t[3] == t[4] && t[4] == t[5] && t[3] != d) ||
+			           (t[6] == t[7] && t[7] == t[8] && t[6] != d))) {
+		if (global_key == "x") {
+			b++;
+			s++;
+			if (s == 1) {
+				document.getElementById("spn").innerHTML = s;
+			} else {
+				document.getElementById("spn").innerHTML = s;
+				document.getElementById("time1").innerHTML = "<b>times</b>";
+			}
+			document.getElementById("win").innerHTML = ' ';
+			document.getElementById("msg").style.display = "inline";
+			document.getElementById("reset1").style.display = "inline";
+			document.getElementById("msg1").innerHTML = "<b>X has won the Game!!</b>" + "<br/>" + "<b>Play Again!!</b>";
+		} else if (global_key == "o") {
+			b++;
+			a++;
+			if (a == 1) {
+				document.getElementById("spn1").innerHTML = a;
+			} else {
+				document.getElementById("spn1").innerHTML = a;
+				document.getElementById("time3").innerHTML = "<b>times</b>";
+			}
+			document.getElementById("win").innerHTML = ' ';
+			document.getElementById("msg").style.display = "inline";
+			document.getElementById("reset1").style.display = "inline";
+			document.getElementById("msg1").innerHTML = "<b>0 has won the Game!!</b>" + "<br/>" + "<b>Play Again!!</b>";
+		}
+	} else if (count == 9) //draw logic
+	{
+		c++;
+		if (c == 1) {
+			document.getElementById("spn2").innerHTML = c;
+		} else {
+			document.getElementById("spn2").innerHTML = c;
+			document.getElementById("time5").innerHTML = "<b>times</b>";
+		}
+		document.getElementById("win").innerHTML = ' ';
+		document.getElementById("msg").style.display = "inline";
+		document.getElementById("reset1").style.display = "inline";
+		document.getElementById("msg1").innerHTML = "<b>Ohh!! it's a draw!!</b>"
+
+	}
+
+	//reset logic
+	function myFunction() {
+
+		document.getElementById("demo").children[0].src = ' ';
+		document.getElementById("demo1").children[0].src = ' ';
+		document.getElementById("demo2").children[0].src = ' ';
+		document.getElementById("demo3").children[0].src = ' ';
+		document.getElementById("demo4").children[0].src = ' ';
+		document.getElementById("demo5").children[0].src = ' ';
+		document.getElementById("demo6").children[0].src = ' ';
+		document.getElementById("demo7").children[0].src = ' ';
+		document.getElementById("demo8").children[0].src = ' ';
+		document.getElementById("msg").style.display = "none";
+		document.getElementById("msg1").innerHTML = ' ';
+		document.getElementById("reset1").style.display = "none";
+		count = 0;
+		b = 0;
+		if (global_key == "x") {
+			document.getElementById("win").innerHTML = " Player 0 turn";
+
+		} else {
+			document.getElementById("win").innerHTML = " Player X turn";
+		}
+
+	}
+</script>
+</body>
+</html>
