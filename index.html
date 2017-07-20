@@ -32,9 +32,10 @@
         </div>
         <div id="msg2">
             <div class="flex-container">
-                <div id="demo" class="one" onClick="displayRandomImage(this)">
+                <div id="demo0" class="one" onClick="displayRandomImage(this)">
                     <img src=" "/>
                 </div>
+
                 <div id="demo1" class="one" onClick="displayRandomImage(this)">
                     <img src=" "/>
                 </div>
@@ -102,10 +103,11 @@
 
     //random image display
     function displayRandomImage(ele) {
+        var check_div = ele.children[0].getAttribute('src');
         if (global_key == '') {
             global_key = keys1;
             var img1 = img[keys1];
-            if (ele.children[0].getAttribute('src') == ' ') {
+            if (check_div == ' ') {
                 ele.children[0].src = img1;
                 if (img1 == img["x"]) {
                     document.getElementById("win").innerHTML = " Player 0 turn";
@@ -124,7 +126,7 @@
         } else {
             switch (global_key) {
                 case "x":
-                    if (ele.children[0].getAttribute('src') == ' ') {
+                    if (check_div == ' ') {
                         if (win_msg == 0) {
                             ele.children[0].src = img["o"];
                             document.getElementById("win").innerHTML = " Player X turn";
@@ -142,7 +144,7 @@
                     }
                     break;
                 case "o":
-                    if (ele.children[0].getAttribute('src') == ' ') {
+                    if (check_div == ' ') {
                         if (win_msg == 0) {
                             ele.children[0].src = img["x"];
                             document.getElementById("win").innerHTML = " Player 0 turn";
@@ -162,15 +164,9 @@
             }
         }
 
-        store_path[0] = document.getElementById("demo").children[0].src;
-        store_path[1] = document.getElementById("demo1").children[0].src;
-        store_path[2] = document.getElementById("demo2").children[0].src;
-        store_path[3] = document.getElementById("demo3").children[0].src;
-        store_path[4] = document.getElementById("demo4").children[0].src;
-        store_path[5] = document.getElementById("demo5").children[0].src;
-        store_path[6] = document.getElementById("demo6").children[0].src;
-        store_path[7] = document.getElementById("demo7").children[0].src;
-        store_path[8] = document.getElementById("demo8").children[0].src;
+        for(i=0;i<9;i++){
+            store_path[i] = document.getElementById("demo"+i).children[0].src;
+        }
 
         if (count >= 4 && ((store_path[0] == store_path[1] && store_path[1] == store_path[2] && store_path[0] != path) ||
                 (store_path[0] == store_path[3] && store_path[3] == store_path[6] && store_path[0] != path) ||
@@ -229,7 +225,7 @@
     //reset logic
     function replay() {
 
-        document.getElementById("demo").children[0].src = ' ';
+        document.getElementById("demo0").children[0].src = ' ';
         document.getElementById("demo1").children[0].src = ' ';
         document.getElementById("demo2").children[0].src = ' ';
         document.getElementById("demo3").children[0].src = ' ';
@@ -251,7 +247,7 @@
         }
 
     }
-
+    
 </script>
 </body>
 </html>

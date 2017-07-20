@@ -143,12 +143,10 @@ h1 {
     display: none;
     position: absolute;
     width: 445px;
-    border: solid;
-    border-color: #990000;
+    border: solid #990000;
     height: 238px;
     background-color: #99CCFF;
     padding: 5px 10px;
-    text-align: center;
     left: -56px;
     top: 56px;
     vertical-align: middle;
