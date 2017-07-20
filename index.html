@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
@@ -8,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 
-<body onload="turn()">
+<body>
 <h1>
     <center>Tic - Tac - Toe</center>
 </h1>
@@ -31,45 +30,7 @@
             </p>
         </div>
         <div id="msg2">
-            <div class="flex-container">
-                <div id="demo0" class="one" onClick="displayRandomImage(this)">
-                    <img src=" "/>
-                </div>
 
-                <div id="demo1" class="one" onClick="displayRandomImage(this)">
-                    <img src=" "/>
-                </div>
-
-                <div id="demo2" class="one" onClick="displayRandomImage(this)">
-                    <img src=" "/>
-                </div>
-            </div>
-            <div class="flex-container1">
-                <div id="demo3" class="one" onClick="displayRandomImage(this)">
-                    <img src=" "/>
-                </div>
-
-                <div id="demo4" class="one" onClick="displayRandomImage(this)">
-                    <img src=" "/>
-                </div>
-
-                <div id="demo5" class="one" onClick="displayRandomImage(this)">
-                    <img src=" "/>
-                </div>
-            </div>
-            <div class="flex-container2">
-                <div id="demo6" class="one" onClick="displayRandomImage(this)">
-                    <img src=" "/>
-                </div>
-
-                <div id="demo7" class="one" onClick="displayRandomImage(this)">
-                    <img src=" "/>
-                </div>
-
-                <div id="demo8" class="one" onClick="displayRandomImage(this)">
-                    <img src=" "/>
-                </div>
-            </div>
         </div>
     </div>
 <br/>
@@ -80,6 +41,7 @@
 <script type="text/javascript">
     var global_key = '';
     var count = 0;
+    var picture;
     var x_win = 0;
     var o_win = 0;
     var draw_count = 0;
@@ -91,15 +53,6 @@
     img["o"] = "image/IMG_20170707_153859.jpg";
     var keys = Object.keys(img);
     var keys1 = keys[Math.floor(Math.random() * keys.length)];
-
-    function turn() {
-        if (keys1 == keys[0]) {
-            document.getElementById("win").innerHTML = " Player X turn";
-
-        } else {
-            document.getElementById("win").innerHTML = " Player 0 turn";
-        }
-    }
 
     //random image display
     function displayRandomImage(ele) {
@@ -224,30 +177,35 @@
 
     //reset logic
     function replay() {
+        for(i=0; i<9; i++){
+            var picture = document.getElementsByClassName("displayDiv")[i];
+            picture.children[0].src = ' ';
+            document.getElementById("msg").style.display = "none";
+            document.getElementById("msg1").innerHTML = ' ';
+            document.getElementById("reset1").style.display = "none";
+            count = 0;
+            win_msg = 0;
+            if (global_key == "x") {
+                document.getElementById("win").innerHTML = " Player 0 turn";
 
-        document.getElementById("demo0").children[0].src = ' ';
-        document.getElementById("demo1").children[0].src = ' ';
-        document.getElementById("demo2").children[0].src = ' ';
-        document.getElementById("demo3").children[0].src = ' ';
-        document.getElementById("demo4").children[0].src = ' ';
-        document.getElementById("demo5").children[0].src = ' ';
-        document.getElementById("demo6").children[0].src = ' ';
-        document.getElementById("demo7").children[0].src = ' ';
-        document.getElementById("demo8").children[0].src = ' ';
-        document.getElementById("msg").style.display = "none";
-        document.getElementById("msg1").innerHTML = ' ';
-        document.getElementById("reset1").style.display = "none";
-        count = 0;
-        win_msg = 0;
-        if (global_key == "x") {
-            document.getElementById("win").innerHTML = " Player 0 turn";
-
-        } else {
-            document.getElementById("win").innerHTML = " Player X turn";
+            } else {
+                document.getElementById("win").innerHTML = " Player X turn";
+            }
         }
+    }
+window.onload = function(){
+    if (keys1 == keys[0]) {
+        document.getElementById("win").innerHTML = " Player X turn";
+
+    } else {
+        document.getElementById("win").innerHTML = " Player 0 turn";
+    }
+    var container = document.getElementById("msg2");
+    for(i=0; i<9; i++){
+        container.innerHTML += '<div id="demo'+i+'" class="displayDiv" onclick="displayRandomImage(this)"><img src=" "/></div>';
 
     }
-    
+}
 </script>
 </body>
 </html>

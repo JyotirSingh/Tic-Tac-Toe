@@ -144,11 +144,11 @@ h1 {
     position: absolute;
     width: 445px;
     border: solid #990000;
-    height: 238px;
+    height: 240px;
     background-color: #99CCFF;
     padding: 5px 10px;
     left: -56px;
-    top: 56px;
+    top: 50px;
     vertical-align: middle;
     line-height: 1.5;
     z-index: 1;
@@ -170,36 +170,12 @@ h1 {
     text-align: center;
     position: relative;
 }
-.flex-container {
-    display: flex;
-    width: 259px;
-    height: 72px;
-    padding: 5px;
-    align-items: flex-start;
-    cursor: pointer;
-}
-.flex-container1 {
-    display: flex;
-    width: 259px;
-    height: 92px;
-    padding: 5px;
-    align-items: center;
-    cursor: pointer;
-}
-.flex-container2 {
-    display: flex;
-    width: 259px;
-    height: 72px;
-    padding: 5px;
-    align-items: flex-end;
-    cursor: pointer;
-}
 img {
     max-width: 100%;
     max-height: 100%;
     width: auto;
 }
-.one {
+.displayDiv {
     border: double;
     float: left;
     background-color: #FFFFFF;
